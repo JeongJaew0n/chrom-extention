@@ -1,0 +1,44 @@
+{
+  "manifest_version": 3,
+  "name": "Daily Fullscreen Popup",
+  "version": "1.0",
+  "description": "Show a fullscreen popup daily at 2:30 AM",
+  "permissions": [
+    "alarms",
+    "scripting",
+    "tabs"
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_icon": {
+      "16": "images/icon-16.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "popup.html",
+        "popup.css",
+        "popup.js",
+        "images/*"
+      ],
+      "matches": [
+        "<all_urls>"
+      ]
+    }
+  ],
+  "host_permissions": [
+    "<all_urls>"
+  ],
+  "commands": {
+    "show_popup_now": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+K",
+        "mac": "Command+Shift+K"
+      },
+      "description": "Show popup immediately"
+    }
+  }
+}
